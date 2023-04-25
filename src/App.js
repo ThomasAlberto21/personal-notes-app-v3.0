@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
-import CardTodos from './Components/CardTodos';
+import CardNotes from './Components/CardNotes';
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
       <Navbar />
       <div className='px-10'>
         <h1 className='font-bold text-gray-900'>Catatan Anda</h1>
-        <CardTodos />
+        <CardNotes />
       </div>
     </div>
   );
