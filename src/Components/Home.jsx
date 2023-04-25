@@ -1,6 +1,6 @@
 import React from 'react';
-import CardNotes from './CardNotes';
 import Axios from 'axios';
+import CardNotes from './CardNotes';
 
 class Home extends React.Component {
   state = {
@@ -8,21 +8,21 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    Axios.get('https://jsonplaceholder.typicode.com/posts').then((res) => {
+    Axios.get('https://jsonplaceholder.typicode.com/posts').then((result) => {
       this.setState({
-        notes: res.data,
+        notes: result.data,
       });
     });
   }
 
   render() {
     return (
-      <>
+      <div>
         <h1 className='font-bold text-gray-900 text-2xl flex justify-center'>
           Catatan Anda
         </h1>
         <div className='flex justify-center'>
-          <div className='lg:grid lg:grid-cols-3 lg:gap-6 '>
+          <div className='lg:grid lg:grid-cols-3 lg:gap-5 mx-5 mb-5'>
             {this.state.notes.map((Notes) => {
               return (
                 <CardNotes
@@ -34,7 +34,7 @@ class Home extends React.Component {
             })}
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
