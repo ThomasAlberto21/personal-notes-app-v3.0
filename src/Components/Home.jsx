@@ -7,16 +7,24 @@ class Home extends React.Component {
     notes: [],
   };
 
-  handleRemoveData = (data) => {
-    console.log(data);
-  };
-
-  componentDidMount() {
+  // Memanggil API
+  getNotesToAPI = () => {
     Axios.get('http://localhost:3004/notes').then((result) => {
       this.setState({
         notes: result.data,
       });
     });
+  };
+
+  // Fungsi hapus data
+  handleRemoveData = (data) => {
+    Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
+      this.getNotesToAPI();
+    });
+  };
+
+  componentDidMount() {
+    this.getNotesToAPI();
   }
 
   render() {
