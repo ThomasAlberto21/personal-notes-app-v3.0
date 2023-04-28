@@ -8,7 +8,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    Axios.get('https://jsonplaceholder.typicode.com/posts').then((result) => {
+    Axios.get('http://localhost:3004/posts').then((result) => {
       this.setState({
         notes: result.data,
       });
