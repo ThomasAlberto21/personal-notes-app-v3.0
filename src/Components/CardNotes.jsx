@@ -7,9 +7,9 @@ export default function CardNotes(props) {
         {props.title}
       </h5>
       <p className='font-normal text-gray-700 dark:text-gray-400 mt-5'>
-        {props.body.substring(0, 100) + '...'}
+        {props.body}
       </p>
-      <button className='bg-red-500 text-white px-3 py-2 mt-6 mb-4 rounded-md bottom-0 absolute font-semibold'>
+      <button className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 absolute font-semibold'>
         Remove
       </button>
     </div>
