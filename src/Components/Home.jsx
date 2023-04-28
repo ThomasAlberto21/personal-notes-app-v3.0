@@ -38,9 +38,9 @@ class Home extends React.Component {
             {this.state.notes.map((Notes) => {
               return (
                 <CardNotes
-                  key={Notes.id}
-                  data={Notes}
-                  remove={this.handleRemoveData}
+                  key={Notes.id} // KEY UNIQUE
+                  data={Notes} // PROPS DATA NOTES (title , body , id)
+                  remove={this.handleRemoveData} // PROPS REMOVE DATA
                 />
               );
             })}
