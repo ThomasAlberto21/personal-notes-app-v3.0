@@ -7,6 +7,10 @@ class Home extends React.Component {
     notes: [],
   };
 
+  handleRemoveData = (data) => {
+    console.log(data);
+  };
+
   componentDidMount() {
     Axios.get('http://localhost:3004/posts').then((result) => {
       this.setState({
@@ -27,8 +31,8 @@ class Home extends React.Component {
               return (
                 <CardNotes
                   key={Notes.id}
-                  title={Notes.title}
-                  body={Notes.body}
+                  data={Notes}
+                  remove={this.handleRemoveData}
                 />
               );
             })}
