@@ -7,11 +7,11 @@ class Home extends React.Component {
     notes: [],
   };
 
-  // Memanggil API
+  // fungsi get(fungsi yang digunakan untuk mengambil data)
   getNotesToAPI = () => {
     Axios.get('http://localhost:3004/notes').then((result) => {
       this.setState({
-        notes: result.data,
+        notes: result.data, // memasukkan data ke dalam array notes
       });
     });
   };
@@ -19,12 +19,12 @@ class Home extends React.Component {
   // Fungsi hapus data
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
-      this.getNotesToAPI();
+      this.getNotesToAPI(); // memanggil fungsi get ketika berhasil remove data
     });
   };
 
   componentDidMount() {
-    this.getNotesToAPI();
+    this.getNotesToAPI(); // memnggil fungsi get untuk ditampilkan ke browser
   }
 
   render() {
