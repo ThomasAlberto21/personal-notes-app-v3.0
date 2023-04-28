@@ -12,7 +12,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    Axios.get('http://localhost:3004/posts').then((result) => {
+    Axios.get('http://localhost:3004/notes').then((result) => {
       this.setState({
         notes: result.data,
       });
