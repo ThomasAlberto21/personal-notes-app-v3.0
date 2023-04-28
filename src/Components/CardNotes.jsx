@@ -9,7 +9,10 @@ export default function CardNotes(props) {
       <p className='font-normal text-gray-700 dark:text-gray-400 mt-5'>
         {props.body}
       </p>
-      <button className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 absolute font-semibold'>
+      <button
+        className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 absolute font-semibold'
+        onClick={props.onClick}
+      >
         Remove
       </button>
     </div>
