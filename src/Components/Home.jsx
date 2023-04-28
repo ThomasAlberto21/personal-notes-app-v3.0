@@ -7,7 +7,7 @@ class Home extends React.Component {
     notes: [],
   };
 
-  // fungsi get(fungsi yang digunakan untuk mengambil data)
+  // fungsi GET (fungsi yang digunakan untuk mengambil data)
   getNotesToAPI = () => {
     Axios.get('http://localhost:3004/notes').then((result) => {
       this.setState({
@@ -16,7 +16,7 @@ class Home extends React.Component {
     });
   };
 
-  // Fungsi hapus data
+  // Fungsi DELETE (fungsi yang digunakan untuk menghapus data)
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
       this.getNotesToAPI(); // memanggil fungsi get ketika berhasil remove data
