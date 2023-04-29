@@ -61,8 +61,13 @@ class Home extends React.Component {
     );
   };
 
+  // PUT (Fungsi yang digunakan untuk mengudate data)
   handleUpdateData = (data) => {
-    console.log(data);
+    Axios.put(`http://localhost:3004/notes/${data}`, this.state.formNotes).then(
+      (result) => {
+        this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
+      }
+    );
   };
 
   // Fungsi untuk merubah title dan body yang di input oeh user
