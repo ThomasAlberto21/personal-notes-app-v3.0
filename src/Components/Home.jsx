@@ -15,11 +15,13 @@ class Home extends React.Component {
 
   // GET (fungsi yang digunakan untuk mengambil data)
   getNotesToAPI = () => {
-    Axios.get('http://localhost:3004/notes').then((result) => {
-      this.setState({
-        notes: result.data, // memasukkan data ke dalam array notes
-      });
-    });
+    Axios.get('http://localhost:3004/notes?_sort=id&_order=desc').then(
+      (result) => {
+        this.setState({
+          notes: result.data, // memasukkan data ke dalam array notes
+        });
+      }
+    );
   };
 
   // ELETE (fungsi yang digunakan untuk menghapus data)
@@ -33,7 +35,7 @@ class Home extends React.Component {
   postNotesToAPI = () => {
     Axios.post('http://localhost:3004/notes', this.state.formNotes).then(
       (result) => {
-        console.log(result);
+        this.getNotesToAPI();
       }
     );
   };
@@ -50,7 +52,8 @@ class Home extends React.Component {
   };
 
   // fungsi yang digunakan untuk mengsubmit data
-  handleSubmitData = () => {
+  handleSubmitData = (e) => {
+    e.preventDefault();
     this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
   };
 
@@ -93,7 +96,7 @@ class Home extends React.Component {
           <button
             type='submit'
             className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-            onClick={this.handleSubmit}
+            onClick={this.handleSubmitData}
           >
             Submit
           </button>
