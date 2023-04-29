@@ -12,6 +12,7 @@ class Home extends React.Component {
       title: '',
       body: '',
     },
+    isUpdate: false, // state yang digunakan untuk melakukan update
   };
 
   // GET (fungsi yang digunakan untuk mengambil data)
@@ -62,15 +63,19 @@ class Home extends React.Component {
   };
 
   // PUT (Fungsi yang digunakan untuk mengudate data)
+  putDataToAPI = () => {
+    Axios.put(`http://localhost:3004/notes/${data}`, this.state.formNotes).then(
+      (result) => {
+        this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
+      }
+    );
+  };
+
   handleUpdateData = (data) => {
     this.setState({
-      formNotes: data, // merubah state formNtes
+      formNotes: data, // merubah state formNotes
+      isUpdate: true, // merubah state isUpdate menjadi true
     });
-    // Axios.put(`http://localhost:3004/notes/${data}`, this.state.formNotes).then(
-    //   (result) => {
-    //     this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
-    //   }
-    // );
   };
 
   // Fungsi untuk merubah title dan body yang di input oeh user
@@ -87,7 +92,11 @@ class Home extends React.Component {
   // Fungsi yang digunakan untuk mengsubmit data
   handleSubmitData = (e) => {
     e.preventDefault();
-    this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
+    if (this.state.isUpdate) {
+      this.putDataToAPI(); // jika state isUpdate menjadi true maka lakukan put data to API
+    } else {
+      this.postNotesToAPI(); // jika isUpdate false maka lakukan post data to API
+    }
   };
 
   componentDidMount() {
