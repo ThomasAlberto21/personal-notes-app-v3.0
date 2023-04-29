@@ -29,7 +29,7 @@ class Home extends React.Component {
   // DELETE (fungsi yang digunakan untuk menghapus data)
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
-      toast.success('Note Success Delete', {
+      toast.success('Delete Note Success', {
         position: 'top-center',
         autoClose: 2000,
         hideProgressBar: false,
