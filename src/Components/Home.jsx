@@ -61,6 +61,10 @@ class Home extends React.Component {
     );
   };
 
+  handleUpdateData = (data) => {
+    console.log(data);
+  };
+
   // Fungsi untuk merubah title dan body yang di input oeh user
   handleFormNotesChange = (e) => {
     let formNotesNew = { ...this.state.formNotes }; //  mengekstrak nilai-nilai dari sebuah array atau objek
@@ -72,13 +76,11 @@ class Home extends React.Component {
     });
   };
 
-
   // fungsi yang digunakan untuk mengsubmit data
   handleSubmitData = (e) => {
     e.preventDefault();
     this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
   };
-
 
   componentDidMount() {
     this.getNotesToAPI(); // memanggil fungsi get untuk ditampilkan ke browser
@@ -136,6 +138,7 @@ class Home extends React.Component {
                   key={Notes.id} // KEY UNIQUE
                   data={Notes} // PROPS DATA NOTES (title , body , id)
                   remove={this.handleRemoveData} // PROPS REMOVE DATA
+                  update={this.handleUpdateData} // PROPS UPDATE DATA
                 />
               );
             })}
