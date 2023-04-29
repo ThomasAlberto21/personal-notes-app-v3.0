@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import CardNotes from './CardNotes';
+import { toast } from 'react-toastify';
 
 class Home extends React.Component {
   state = {
@@ -27,7 +28,17 @@ class Home extends React.Component {
   // ELETE (fungsi yang digunakan untuk menghapus data)
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
-      this.getNotesToAPI(); // memanggil fungsi get ketika berhasil remove data
+      toast.success('Note Success Delete', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil remove data
     });
   };
 
@@ -35,7 +46,17 @@ class Home extends React.Component {
   postNotesToAPI = () => {
     Axios.post('http://localhost:3004/notes', this.state.formNotes).then(
       (result) => {
-        this.getNotesToAPI();
+        toast.success('Added Note Success', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+        this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil menambahkan data
       }
     );
   };
