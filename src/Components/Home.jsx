@@ -32,12 +32,9 @@ class Home extends React.Component {
   handleFormNotesChange = (e) => {
     let formNotesNew = { ...this.state.formNotes }; //  mengekstrak nilai-nilai dari sebuah array atau objek
     formNotesNew[e.target.name] = e.target.value; // menggambil target name nya dan ubah target nya menjadi value yg diinput
-    this.setState(
-      {
-        formNotes: formNotesNew,
-      },
-      () => console.log(this.state.formNotes)
-    );
+    this.setState({
+      formNotes: formNotesNew, // ubah state awal nya menjadi state baru
+    });
   };
 
   componentDidMount() {
