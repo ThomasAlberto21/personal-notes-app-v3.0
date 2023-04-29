@@ -58,6 +58,14 @@ class Home extends React.Component {
           theme: 'dark',
         });
         this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil menambahkan data
+        this.setState({
+          formNotes: {
+            userId: 1,
+            id: '',
+            title: '',
+            body: '',
+          },
+        });
       }
     );
   };
@@ -68,9 +76,25 @@ class Home extends React.Component {
       `http://localhost:3004/notes/${this.state.formNotes.id}`,
       this.state.formNotes
     ).then((result) => {
+      toast.success('Update Note Success', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
       this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
       this.setState({
         isUpdate: false,
+        formNotes: {
+          userId: 1,
+          id: '',
+          title: '',
+          body: '',
+        },
       });
     });
   };
