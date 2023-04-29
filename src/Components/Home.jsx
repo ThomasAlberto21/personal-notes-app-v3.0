@@ -44,7 +44,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <form className='bg-gray-900 lg:w-2/4 md:w-2/3 p-7 lg:m-auto md:m-auto lg:my-7 md:my-7 mx-5 my-5 rounded-lg '>
+        <form className='bg-gray-900 lg:w-2/4 md:w-2/3 px-7 py-5 lg:m-auto md:m-auto lg:my-7 md:my-7 mx-5 my-5 rounded-lg '>
+        <h1 className='text-white font-bold text-2xl mb-5'>Add Notes</h1>
           <div className='mb-6'>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
               Your Title
@@ -84,7 +85,7 @@ class Home extends React.Component {
         </h1>
 
         <div className='flex justify-center'>
-          <div className='lg:grid lg:grid-cols-3 md:flex  lg:gap-5 mx-5 mb-5'>
+          <div className='grid grid-flow-row gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-5 mb-5'>
             {this.state.notes.map((Notes) => {
               return (
                 <CardNotes
