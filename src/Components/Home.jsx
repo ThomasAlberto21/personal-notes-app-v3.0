@@ -31,9 +31,11 @@ class Home extends React.Component {
 
   // POST (Fungsi yang digunakan untuk mengirim data)
   postNotesToAPI = () => {
-    Axios.post('http://localhost:3004/notes', this.state.formNotes).then((result) => {
-
-    })
+    Axios.post('http://localhost:3004/notes', this.state.formNotes).then(
+      (result) => {
+        console.log(result);
+      }
+    );
   };
 
   // Fungsi untuk merubah title dan body yang di input oeh user
@@ -47,8 +49,9 @@ class Home extends React.Component {
     });
   };
 
+  // fungsi yang digunakan untuk mengsubmit data
   handleSubmitData = () => {
-    console.log(this.state.formNotes);
+    this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
   };
 
   componentDidMount() {
