@@ -11,7 +11,7 @@ export default function CardNotes(props) {
       </p>
       <button
         className='bg-green-500 text-white px-3 py-2 my-4 rounded-md bottom-0  absolute font-semibold'
-        onClick={() => props.update(props.data.id)}
+        onClick={() => props.update(props.data)}
       >
         Update
       </button>
