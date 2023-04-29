@@ -5,6 +5,12 @@ import CardNotes from './CardNotes';
 class Home extends React.Component {
   state = {
     notes: [],
+    formNotes: {
+      userId: 1,
+      id: '',
+      title: '',
+      body: '',
+    },
   };
 
   // fungsi GET (fungsi yang digunakan untuk mengambil data)
