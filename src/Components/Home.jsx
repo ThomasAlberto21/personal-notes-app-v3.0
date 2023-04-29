@@ -25,7 +25,7 @@ class Home extends React.Component {
     );
   };
 
-  // ELETE (fungsi yang digunakan untuk menghapus data)
+  // DELETE (fungsi yang digunakan untuk menghapus data)
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
       toast.success('Note Success Delete', {
@@ -79,7 +79,7 @@ class Home extends React.Component {
     this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
   };
 
-  
+
   componentDidMount() {
     this.getNotesToAPI(); // memanggil fungsi get untuk ditampilkan ke browser
   }
@@ -118,7 +118,7 @@ class Home extends React.Component {
           </div>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-semibold'
             onClick={this.handleSubmitData}
           >
             Submit

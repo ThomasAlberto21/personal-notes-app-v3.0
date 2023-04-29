@@ -10,7 +10,13 @@ export default function CardNotes(props) {
         {props.data.body}
       </p>
       <button
-        className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 absolute font-semibold'
+        className='bg-green-500 text-white px-3 py-2 my-4 rounded-md bottom-0  absolute font-semibold'
+        onClick={() => props.update(props.data.id)}
+      >
+        Update
+      </button>
+      <button
+        className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 right-44 absolute font-semibold'
         onClick={() => props.remove(props.data.id)}
       >
         Remove
