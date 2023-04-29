@@ -86,6 +86,8 @@ class Home extends React.Component {
   handleFormNotesChange = (e) => {
     let formNotesNew = { ...this.state.formNotes }; //  mengekstrak nilai-nilai dari sebuah array atau objek
     let idUnique = new Date().getTime(); // mengambil date dan waktu untuk membuat id yang unik
+
+    // jika isUpdate false maka jangan ubah id nya
     if (!this.state.isUpdate) {
       formNotesNew['id'] = idUnique; // memasukkan id yang unik tadi ke dalam id formNotesNew
     }
