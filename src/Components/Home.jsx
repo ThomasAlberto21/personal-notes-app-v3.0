@@ -13,7 +13,7 @@ class Home extends React.Component {
     },
   };
 
-  // fungsi GET (fungsi yang digunakan untuk mengambil data)
+  // GET (fungsi yang digunakan untuk mengambil data)
   getNotesToAPI = () => {
     Axios.get('http://localhost:3004/notes').then((result) => {
       this.setState({
@@ -22,13 +22,21 @@ class Home extends React.Component {
     });
   };
 
-  // Fungsi DELETE (fungsi yang digunakan untuk menghapus data)
+  // ELETE (fungsi yang digunakan untuk menghapus data)
   handleRemoveData = (data) => {
     Axios.delete(`http://localhost:3004/notes/${data}`).then((result) => {
       this.getNotesToAPI(); // memanggil fungsi get ketika berhasil remove data
     });
   };
 
+  // POST (Fungsi yang digunakan untuk mengirim data)
+  postNotesToAPI = () => {
+    Axios.post('http://localhost:3004/notes', this.state.formNotes).then((result) => {
+
+    })
+  };
+
+  // Fungsi untuk merubah title dan body yang di input oeh user
   handleFormNotesChange = (e) => {
     let formNotesNew = { ...this.state.formNotes }; //  mengekstrak nilai-nilai dari sebuah array atau objek
     let idUnique = new Date().getTime(); // mengambil date dan waktu untuk membuat id yang unik
@@ -37,6 +45,10 @@ class Home extends React.Component {
     this.setState({
       formNotes: formNotesNew, // memasukkan data baru ke dalam object formNotes
     });
+  };
+
+  handleSubmitData = () => {
+    console.log(this.state.formNotes);
   };
 
   componentDidMount() {
@@ -78,6 +90,7 @@ class Home extends React.Component {
           <button
             type='submit'
             className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+            onClick={this.handleSubmit}
           >
             Submit
           </button>
