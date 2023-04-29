@@ -138,7 +138,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <form className='bg-gray-900 lg:w-2/4 md:w-2/3 px-7 py-5 lg:m-auto md:m-auto lg:my-7 md:my-7 mx-5 my-5 rounded-lg '>
+        <form className='bg-gray-900 lg:w-2/4 md:w-2/3 px-6 py-5 lg:m-auto md:m-auto lg:my-7 md:my-7 mx-2 my-5 rounded-lg '>
           <h1 className='text-white font-bold text-2xl mb-5'>Add Notes</h1>
           <div className='mb-6'>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
