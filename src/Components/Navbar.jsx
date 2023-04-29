@@ -5,11 +5,11 @@ export default function Navbar() {
 
   return (
     <nav className='bg-white border-gray-200 dark:bg-gray-900'>
-      <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-        <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
-          Personal Notes
+      <div className='max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4'>
+        <span className='self-center text-2xl font-bold whitespace-nowrap dark:text-white'>
+          PERSONAL NOTES APP
         </span>
-        <div className='flex md:order-2'>
+        {/* <div className='flex md:order-2'>
           <button
             type='button'
             className='md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1'
@@ -82,7 +82,7 @@ export default function Navbar() {
               </form>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </nav>
   );
