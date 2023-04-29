@@ -2,25 +2,29 @@ import React from 'react';
 
 export default function CardNotes(props) {
   return (
-    <div className='block w-96 h-72 px-5 pb-20 pt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 lg:mb-0 my-5 relative'>
-      <h5 className='mb-2 text-2xl font-bold tracking-normal text-gray-900 dark:text-white '>
-        {props.data.title}
-      </h5>
-      <p className='font-normal text-gray-700 dark:text-gray-400 mt-5'>
-        {props.data.body}
-      </p>
-      <button
-        className='bg-green-500 text-white px-3 py-2 my-4 rounded-md bottom-0  absolute font-semibold'
-        onClick={() => props.update(props.data)}
-      >
-        Update
-      </button>
-      <button
-        className='bg-red-500 text-white px-3 py-2 my-4 rounded-md bottom-0 right-44 absolute font-semibold'
-        onClick={() => props.remove(props.data.id)}
-      >
-        Remove
-      </button>
+    <div className='w-96 h-80 px-6 py-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 lg:mb-0 my-5 flex flex-col justify-end'>
+      <div className='mb-5'>
+        <h5 className='mb-2 text-2xl font-bold tracking-normal text-gray-900 dark:text-white '>
+          {props.data.title}
+        </h5>
+        <p className='font-normal text-gray-700 dark:text-gray-400 mt-5'>
+          {props.data.body}
+        </p>
+      </div>
+      <div className='mt-auto'>
+        <button
+          className='bg-green-500 text-white w-full rounded-md bottom-0 py-3 font-semibold  '
+          onClick={() => props.update(props.data)}
+        >
+          Update
+        </button>
+        <button
+          className='bg-red-500 text-white px-3 w-full rounded-md right-0 bottom-0 py-3 font-semibold mt-3'
+          onClick={() => props.remove(props.data.id)}
+        >
+          Remove
+        </button>
+      </div>
     </div>
   );
 }

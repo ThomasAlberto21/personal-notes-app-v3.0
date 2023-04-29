@@ -1,24 +1,5 @@
 {
-  "notes": [
-    {
-      "userId": 1,
-      "id": 1682769924085,
-      "title": "dfsdf",
-      "body": "sdfdsfs"
-    },
-    {
-      "userId": 1,
-      "id": 1682769929143,
-      "title": "dsf",
-      "body": "dsfsdf"
-    },
-    {
-      "userId": 1,
-      "id": 1682769932397,
-      "title": "sdfsdfdsf",
-      "body": "dsfsdfsd"
-    }
-  ],
+  "notes": [],
   "comments": [
     {
       "id": 1,
