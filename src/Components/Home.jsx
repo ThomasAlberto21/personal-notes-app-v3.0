@@ -64,7 +64,7 @@ class Home extends React.Component {
   // PUT (Fungsi yang digunakan untuk mengudate data)
   handleUpdateData = (data) => {
     this.setState({
-      formNotes: data // merubah state formNtes
+      formNotes: data, // merubah state formNtes
     });
     // Axios.put(`http://localhost:3004/notes/${data}`, this.state.formNotes).then(
     //   (result) => {
@@ -110,6 +110,7 @@ class Home extends React.Component {
               className='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
               placeholder='Input Your Tittle....'
               onChange={this.handleFormNotesChange}
+              value={this.state.formNotes.title}
             />
           </div>
           <div className='mb-6'>
@@ -124,6 +125,7 @@ class Home extends React.Component {
               className='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
               placeholder='Input Your Notes....'
               onChange={this.handleFormNotesChange}
+              value={this.state.formNotes.body}
             />
           </div>
           <button
