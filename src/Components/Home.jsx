@@ -64,11 +64,12 @@ class Home extends React.Component {
 
   // PUT (Fungsi yang digunakan untuk mengudate data)
   putDataToAPI = () => {
-    Axios.put(`http://localhost:3004/notes/${data}`, this.state.formNotes).then(
-      (result) => {
-        this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
-      }
-    );
+    Axios.put(
+      `http://localhost:3004/notes/${this.state.formNotes.id}`,
+      this.state.formNotes
+    ).then((result) => {
+      this.getNotesToAPI(); // memanggil fungsi GET ketika berhasil mengupdate data
+    });
   };
 
   handleUpdateData = (data) => {
