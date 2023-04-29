@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CardNotes(props) {
   return (
-    <div className='block max-w-sm px-6 pb-20 pt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 lg:mb-0 my-5 relative'>
+    <div className='block w-96 h-72 px-5 pb-20 pt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 lg:mb-0 my-5 relative'>
       <h5 className='mb-2 text-2xl font-bold tracking-normal text-gray-900 dark:text-white '>
         {props.data.title}
       </h5>
