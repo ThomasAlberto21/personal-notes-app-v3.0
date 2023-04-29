@@ -72,12 +72,14 @@ class Home extends React.Component {
     });
   };
 
+
   // fungsi yang digunakan untuk mengsubmit data
   handleSubmitData = (e) => {
     e.preventDefault();
     this.postNotesToAPI(); // memasukkan data ke dalam API ketika submit berhasil
   };
 
+  
   componentDidMount() {
     this.getNotesToAPI(); // memanggil fungsi get untuk ditampilkan ke browser
   }
