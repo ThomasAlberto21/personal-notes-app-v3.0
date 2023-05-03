@@ -195,7 +195,7 @@ class Home extends React.Component {
         </h1>
 
         <div className='flex justify-center '>
-          <div className='grid grid-flow-row gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-5'>
+          <div className='grid grid-flow-row gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-5 px-10'>
             {this.state.notes.map((Notes) => {
               return (
                 <CardNotes
