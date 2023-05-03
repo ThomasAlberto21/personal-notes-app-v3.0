@@ -30,10 +30,11 @@ class DetailNotes extends React.Component {
 
   render() {
     return (
-      <div className='p-20'>
-        <h1>Detail Notes</h1>
-        <p>{this.state.notes.title}</p>
-        <p>{this.state.notes.body}</p>
+      <div className='px-10 mt-16'>
+        <h1 className='font-bold text-gray-900 text-4xl'>
+          {this.state.notes.title}
+        </h1>
+        <p className='font-normal mt-5'>{this.state.notes.body}</p>
       </div>
     );
   }
