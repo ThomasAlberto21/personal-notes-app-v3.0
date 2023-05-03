@@ -1,7 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
-import CardNotes from './CardNotes';
+import CardNotes from '../Components/CardNotes';
 import { toast } from 'react-toastify';
+import { useNavigate, useParams } from 'react-router-dom';
 
 class Home extends React.Component {
   state = {
@@ -131,6 +132,10 @@ class Home extends React.Component {
     }
   };
 
+  handleDetailNotes = () => {
+    console.log(`hello`);
+  };
+
   componentDidMount() {
     this.getNotesToAPI(); // memanggil fungsi get untuk ditampilkan ke browser
   }
@@ -190,6 +195,7 @@ class Home extends React.Component {
                   data={Notes} // PROPS DATA NOTES (title , body , id)
                   remove={this.handleRemoveData} // PROPS REMOVE DATA
                   update={this.handleUpdateData} // PROPS UPDATE DATA
+                  detailNotes={this.handleDetailNotes}
                 />
               );
             })}
