@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -7,7 +8,7 @@ export default function Navbar() {
     <nav className='bg-white border-gray-200 dark:bg-gray-900'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4'>
         <span className='self-center text-2xl font-bold whitespace-nowrap dark:text-white'>
-          PERSONAL NOTES APP
+          <Link to='/'>PERSONAL NOTES APP</Link>
         </span>
         {/* <div className='flex md:order-2'>
           <button
