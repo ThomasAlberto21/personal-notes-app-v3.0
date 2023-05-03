@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './pages/Home';
+import HomeWrapper from './pages/Home';
 import Navbar from './Components/Navbar';
 import DetailNotes from './pages/DetailNotes';
 import { Route, Routes } from 'react-router-dom';
@@ -11,7 +11,7 @@ export default function App() {
     <div className='App'>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<HomeWrapper />} />
         <Route path='/detail_notes/:id' element={<DetailNotes />} />
       </Routes>
       <ToastContainer />
