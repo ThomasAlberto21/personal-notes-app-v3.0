@@ -1,7 +1,7 @@
 import React from 'react';
+import Navbar from './Components/Navbar';
 import HomeWrapper from './pages/Home';
 import DetailNotesWrapper from './pages/DetailNotes';
-import Navbar from './Components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
